@@ -16,10 +16,17 @@ public class PracticeHashMap {
 		// size
 		System.out.println(ages.size()); // 3
 		
+		// searching for existence
+		System.out.println(ages.containsKey("Amy"));
+		System.out.println(ages.containsValue(32));
+		
 		for (String person : ages.keySet()) {
 			// accessing an item
 			System.out.println(person + " is " + ages.get(person) + " years old.");
 		}
+		
+		// accessing an item with default value
+		System.out.println(ages.getOrDefault("Charles", -1));
 		
 		// values
 		System.out.println(ages.values());
