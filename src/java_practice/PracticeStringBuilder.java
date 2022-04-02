@@ -18,6 +18,27 @@ public class PracticeStringBuilder {
 		// initialized with the specified String or CharSequence
 		StringBuilder sb3 = new StringBuilder("Hello");
 		System.out.println(sb3.capacity());
-		System.out.println("sb3 = " + sb3);
+		System.out.println(sb3);
+		
+		// appending to the sequence
+		sb3.append(" World ");
+		sb3.append(5);
+		System.out.println(sb3);
+		
+		// character at specified index
+		System.out.println(sb3.charAt(4));
+		
+		// deleting from startIndex (inclusive) to endIndex (not inclusive) 
+		//	won't delete anything if startIndex == endIndex
+		sb3.delete(5, 7);
+		System.out.println(sb3);
+		
+		// if endIndex is too big, deletes to the end
+		sb3.delete(5, 15);
+		System.out.println(sb3);
+		
+		// deleting one character at index
+		sb3.deleteCharAt(4);
+		System.out.println(sb3);
 	}
 }
