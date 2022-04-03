@@ -17,7 +17,10 @@ public class PracticeStringBuilder {
 		
 		// initialized with the specified String or CharSequence
 		StringBuilder sb3 = new StringBuilder("Hello");
-		System.out.println(sb3.capacity());
+		// capacity is 16 + initialized String's length
+		System.out.println(sb3.capacity()); 
+		// length - character count
+		System.out.println(sb3.length());
 		System.out.println(sb3);
 		
 		// appending to the sequence
@@ -40,5 +43,35 @@ public class PracticeStringBuilder {
 		// deleting one character at index
 		sb3.deleteCharAt(4);
 		System.out.println(sb3);
+		
+		// index of the first occurrence of specified substring
+		System.out.println(sb3.indexOf("l"));
+		
+		// similar but for the last occurrence
+		System.out.println(sb3.lastIndexOf("l"));
+		
+		// inserting at specified offset >= 0 and <= length
+		sb3.insert(4, "o World");
+		System.out.println(sb3);
+		
+		// replacing from start (inclusive) to end (exclusive or end of string) indices
+		sb3.replace(0, 5, "Cool");
+		System.out.println(sb3);
+		
+		// replacing the character at the specified index
+		sb3.setCharAt(5, 'w');
+		System.out.println(sb3);
+		
+		// reverses the sequence
+		System.out.println(sb3.reverse());
+		
+		// substring from start (inclusive) to end (exclusive or end of string)
+		System.out.println(sb3.substring(5));
+		System.out.println(sb3.substring(7, 8));
+		
+		// try to trim if storage is too big for the character sequence
+		System.out.println(sb3.capacity());
+		sb3.trimToSize();
+		System.out.println(sb3.capacity()); // reduced to 10
 	}
 }
