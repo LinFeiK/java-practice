@@ -1,10 +1,14 @@
 package java_practice;
 
+// practicing the Greatest Common Factor (Euclidean Algorithm found on https://en.wikipedia.org/wiki/Euclidean_algorithm)
+// 	and Least Common Multiple algorithms
 public class GCFandLCM {
 
 	public static void main(String[] args) {
 		System.out.println(greatestCommonFactor(1000, 25));
 		System.out.println(greatestCommonFactor(1071, 462));
+		System.out.println(leastCommonMultiple(25, 75));
+		System.out.println(leastCommonMultiple(30, 40));
 	}
 	
 	// a >= b
@@ -16,7 +20,6 @@ public class GCFandLCM {
         
         for (int i = 0; (i * b) <= a; i++) {
             remainder = a - (i * b);
-            System.out.println(remainder);
             
             if (remainder == 0) {
                 return b;
@@ -27,5 +30,11 @@ public class GCFandLCM {
         
         return 1;
     }
+	
+	public static int leastCommonMultiple(int a, int b) {
+		if (a % b == 0) return b;
+		if (b % a == 0) return a;
+		return a / greatestCommonFactor(a, b) * b;
+	}
 
 }
