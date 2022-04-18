@@ -18,7 +18,7 @@ public class GCFandLCM {
         if (a == b) return a;
         if (a % b == 0) return b;
         
-        for (int i = 0; (i * b) <= a; i++) {
+        for (int i = 1; (i * b) <= a; i++) {
             remainder = a - (i * b);
             
             if (remainder == 0) {
@@ -34,7 +34,7 @@ public class GCFandLCM {
 	public static int leastCommonMultiple(int a, int b) {
 		if (a % b == 0) return a;
 		if (b % a == 0) return b;
-		return a / greatestCommonFactor(a, b) * b;
+		return a / greatestCommonFactor(Integer.max(a, b), Integer.min(a, b)) * b;
 	}
 
 }
