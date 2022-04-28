@@ -13,15 +13,15 @@ public class SortingTest {
 		
 		MergeSort mergeSort = new MergeSort();
 		
-		testMergeSort(mergeSort, test1);
-		testMergeSort(mergeSort, test2);
-		testMergeSort(mergeSort, test3);
-		testMergeSort(mergeSort, test4);
-		testMergeSort(mergeSort, test5);
+		testMergeSort(mergeSort, test1, 'A');
+		testMergeSort(mergeSort, test2, 'D');
+		testMergeSort(mergeSort, test3, 'A');
+		testMergeSort(mergeSort, test4, 'A');
+		testMergeSort(mergeSort, test5, 'D');
 	}
 	
-	private static void testMergeSort(MergeSort mergeSort, int[] testArray) {
-		mergeSort.mergeSort(testArray, 0, testArray.length - 1);
+	private static void testMergeSort(MergeSort mergeSort, int[] testArray, char order) {
+		mergeSort.mergeSort(testArray, 0, testArray.length - 1, order);
 		System.out.println(Arrays.toString(testArray));
 	}
 
